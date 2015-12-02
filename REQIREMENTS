@@ -1,6 +1,4 @@
-#django==1.4.21
-#m3-core==2.0.9.6
-#m3-ui==2.0.7.15
-#-e hg+https://bitbucket.org/barsgroup/objectpack@2.0.23.3#egg=objectpack
-#-e hg+https://bitbucket.org/barsgroup/m3-ext@2.0.7.15#egg=m3-ext
-#-e hg+https://bitbucket.org/barsgroup/m3-core@2.0.9.6#egg=m3-core
+django==1.4.21
+m3-core==2.0.12.2
+m3-ui==2.0.7.15
+django-mptt

@@ -1,13 +1,9 @@
 # coding: utf-8
 
 from django.conf import urls
-from m3_ext.ui import app_ui
-from m3.actions import ControllerCache
 from objectpack import desktop
 
-from m3_ext.ui.app_ui import DesktopLoader, DesktopShortcut
-
-from actions import PersonObjectPack
+from actions import PersonObjectPack, InstitutionTreeObjectPack
 import controller
 
 
@@ -19,14 +15,18 @@ def register_urlpatterns():
 
     return urls.defaults.patterns(
             '',
-            ('^', controller.action_controller.process_request),
+            ('^', controller.main_controller.process_request),
         )
 
 def register_actions():
     """
     регистрация экшенов
     """
-    controller.action_controller.packs.append(PersonObjectPack())
+    controller.main_controller.extend_packs(
+        (
+            PersonObjectPack(),
+            InstitutionTreeObjectPack(),
+        ))
 
 
 def register_desktop_menu():
@@ -34,7 +34,7 @@ def register_desktop_menu():
     регистрация элеметов рабочего стола
     """
 
-    desktop.uificate_the_controller(controller.action_controller)
+    desktop.uificate_the_controller(controller.main_controller)
 
 
 

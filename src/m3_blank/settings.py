@@ -151,7 +151,11 @@ INSTALLED_APPS = (
     'm3_ext',
     'm3_ext.ui',
     'objectpack',
+    'wsfactory',
+
     'demo',
+
+    'mptt',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -180,3 +184,5 @@ LOGGING = {
         },
     }
 }
+
+WSFACTORY_CONFIG_FILE = "wsfactory_config.xml"
