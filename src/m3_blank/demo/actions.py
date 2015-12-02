@@ -10,30 +10,23 @@ from objectpack.filters import FilterByField, ColumnFilterEngine
 import models
 import ui
 
-
-# =============================================================================
-# PersonObjectPack
-# =============================================================================
 class PersonObjectPack(objectpack.ObjectPack):
     """
     ObjectPack для модели Person
     """
 
     model = models.Person
-    title = u'Дети в системе'
-    width = 1200
-    height = 700
-
-
-    # add_to_desktop = True
-    # add_to_menu = True
-    #
+    title = u'Физические лица'
+    title_plural = u'Физические лица'
+    add_to_desktop = True
     short_name = 'person'
-    # url = '/person'
-    # title = u'Физические лица'
-    # title_plural = u'Физические лица'
 
+    edit_window = add_window = objectpack.ui.ModelEditWindow.fabricate(model)
 
-    # edit_window = add_window = objectpack.ui.ModelEditWindow.fabricate(model)
+    def extend_menu(self, menu):
+        return menu.SubMenu(
+            u'Реестры',
+            menu.Item(self.title, self.list_window_action),
+        )
 
 

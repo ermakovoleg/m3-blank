@@ -1,11 +1,11 @@
 
-
 *.pyc
-*.sqlite
+*.sqlt
 .idea
 .vagrant
 build
 dist
 env
+env_2
 Vagrantfile
 src/m3_blank/static
