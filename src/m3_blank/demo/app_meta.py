@@ -26,7 +26,7 @@ def register_actions():
     """
     регистрация экшенов
     """
-    controller.packs.append(PersonObjectPack())
+    controller.action_controller.packs.append(PersonObjectPack())
 
 
 def register_desktop_menu():
