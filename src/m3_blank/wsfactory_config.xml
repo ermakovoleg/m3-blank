@@ -16,12 +16,16 @@
   </Protocols>
   <ApiRegistry>
     <!-- API-методы -->
-    <Api code="Code" id="Id" module="demo.service.SayHello" name="Do some action"/>
+    <Api code="GetInstitution" id="GetInstitution" module="demo.service.get_institution" name="Список учреждений"/>
+    <Api code="AddPerson" id="AddPerson" module="demo.service.add_person" name="Добавить Физ. Лицо"/>
   </ApiRegistry>
   <Services>
     <!-- Сервисы, они же услуги - наборы методов-API -->
-    <Service code="Service" name="Sample service">
-      <Api id="Id"/>
+    <Service code="GetInstitutionService" name="GetInstitutionService">
+      <Api id="GetInstitution"/>
+    </Service>
+    <Service code="AddPersonService" name="AddPersonService">
+      <Api id="AddPerson"/>
     </Service>
   </Services>
   <SecurityProfile>
@@ -39,7 +43,12 @@
   </SecurityProfile>
   <Applications>
     <!-- Реестр веб-сервисов (Соответствия протоколов-сервисов) -->
-    <Application name="InstitutionApp" service="Service">
+    <Application name="GetInstitutionApplication" service="GetInstitutionService">
+        <InProtocol code="http-rpc"/>
+        <OutProtocol code="json"/>
+    </Application>
+
+    <Application name="AddPersonApplication" service="AddPersonService">
         <InProtocol code="http-rpc"/>
         <OutProtocol code="json"/>
     </Application>

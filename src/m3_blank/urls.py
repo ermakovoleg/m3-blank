@@ -17,7 +17,3 @@ urlpatterns = patterns('',
 urlpatterns += wsfactory.urls.urlpatterns
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += get_app_urlpatterns()
-
-
-for p in urlpatterns:
-    print p

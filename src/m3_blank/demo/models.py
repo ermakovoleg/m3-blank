@@ -4,14 +4,13 @@
 """
 import datetime
 import mptt
-
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
 # =============================================================================
 # Institutions
 # =============================================================================
-from objectpack import ValidationError
 
 
 class Institution(models.Model):
@@ -27,12 +26,7 @@ class Institution(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        depth = 0
-        model = self
-        while model.parent is not None:
-            depth += 1
-            model = model.parent
-        if depth > 1:
+        if self.parent and self.parent.level > 0:
             raise ValidationError(u'Максимальный уровень вложенности')
         super(Institution, self).save(*args, **kwargs)
 
