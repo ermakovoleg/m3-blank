@@ -15,7 +15,7 @@ def register_urlpatterns():
 
     return urls.defaults.patterns(
             '',
-            ('^', controller.main_controller.process_request),
+            ('^controller/', controller.main_controller.process_request),
         )
 
 def register_actions():

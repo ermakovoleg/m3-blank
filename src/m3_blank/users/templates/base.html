@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    {% block extra_head %}{% endblock %}
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted"> M3 Demo</h3>
+        </div>
+
+        {% block body %}{% endblock %}
+
+    </div> <!-- /container -->
+</body>
+</html>

@@ -16,6 +16,13 @@ class InstitutionTreeObjectPack(TreeObjectPack):
     add_to_desktop = True
     short_name = 'institution'
 
+    need_check_permission = True
+    sub_permissions = {}
+    sub_permissions['view'] = ''
+    sub_permissions['add'] = ''
+    sub_permissions['edit'] = ''
+    sub_permissions['delete'] = ''
+
     edit_window = add_window = api_ui.ModelEditWindow.fabricate(
         model=model,
         model_register=obs,
@@ -62,6 +69,14 @@ class PersonObjectPack(ObjectPack):
             'data_index': 'date_of_birth',
         },
     ]
+
+    need_check_permission = True
+
+    sub_permissions = {}
+    sub_permissions['view'] = ''
+    sub_permissions['add'] = ''
+    sub_permissions['edit'] = ''
+    sub_permissions['delete'] = ''
 
     def extend_menu(self, menu):
         return menu.SubMenu(
