@@ -18,7 +18,6 @@ def register_actions():
     )
 
 
-
 def register_desktop_menu():
     metarole = app_ui.GENERIC_USER
 
