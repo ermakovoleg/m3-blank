@@ -18,10 +18,10 @@ class InstitutionTreeObjectPack(TreeObjectPack):
 
     need_check_permission = True
     sub_permissions = {}
-    sub_permissions['view'] = ''
-    sub_permissions['add'] = ''
-    sub_permissions['edit'] = ''
-    sub_permissions['delete'] = ''
+    sub_permissions['view'] = u'Просмотр'
+    sub_permissions['add'] = u'Добавить'
+    sub_permissions['edit'] = u'Изменить'
+    sub_permissions['delete'] = u'Удалить'
 
     edit_window = add_window = api_ui.ModelEditWindow.fabricate(
         model=model,
@@ -73,10 +73,10 @@ class PersonObjectPack(ObjectPack):
     need_check_permission = True
 
     sub_permissions = {}
-    sub_permissions['view'] = ''
-    sub_permissions['add'] = ''
-    sub_permissions['edit'] = ''
-    sub_permissions['delete'] = ''
+    sub_permissions['view'] = u'Просмотр'
+    sub_permissions['add'] = u'Добавить'
+    sub_permissions['edit'] = u'Изменить'
+    sub_permissions['delete'] = u'Удалить'
 
     def extend_menu(self, menu):
         return menu.SubMenu(

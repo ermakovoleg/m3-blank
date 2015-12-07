@@ -42,27 +42,3 @@ def register_urlpatterns():
     return urls.defaults.patterns('',
         (r'^auth/', controller.auth_controller.process_request),
     )
-
-
-# def register_metaroles(manager):
-#     """
-#     Функция возвращает список метаролей, которые регистрируются
-#     по умолчанию на уровне Платформы М3.
-#
-#     @param manager: объект, отвечающий за управление метаролями.
-#     """
-#
-#     # метароль Сотрудник
-#     manager.TEACHER_METAROLE = UserMetarole(UserProfile.TEACHER, u'Сотрудник')
-#     # метароль Родитель
-#     manager.PARENT_METAROLE = UserMetarole(UserProfile.PARENT, u'Родитель')
-#     # метароль обычного пользователя системы
-#     manager.PUPIL_METAROLE = UserMetarole(UserProfile.PUPIL, u'Ученик')
-#
-#     return [
-#         manager.TEACHER_METAROLE,
-#         manager.PARENT_METAROLE,
-#         manager.PUPIL_METAROLE
-#     ]
-
-
